@@ -1,0 +1,23 @@
+{
+  "name": "d3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovhrachya93/d3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hovhrachya93/d3/issues"
+  },
+  "homepage": "https://github.com/hovhrachya93/d3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
