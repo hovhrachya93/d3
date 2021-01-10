@@ -41,7 +41,6 @@ async function drawLineChart() {
     .scaleLinear()
     .domain(d3.extent(dataset, yAccessor))
     .range([dimensions.boundedHeight, 0]);
-
   const freezingTemperaturePlacement = yScale(32);
   const freezingTemperatures = bounds
     .append("rect")
