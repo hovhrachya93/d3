@@ -1,10 +1,12 @@
 async function drawLineChart() {
  
   // Access data
-  const dataset = await d3.json("./../weather_data.json");
-  const yAccessor = (d) => d.temperatureMax;
+  // const dataset = await d3.json("./../weather_data.json");
+  const dataset = await d3.json("https://covid19.mathdro.id/api/daily");
+  console.log(dataset)
+  const yAccessor = (d) => d.totalConfirmed;
   const dateParser = d3.timeParse("%Y-%m-%d");
-  const xAccessor = (d) => dateParser(d.date);
+  const xAccessor = (d) => dateParser(d.reportDate);
   
   // Create chart dimensions
   const dimensions = {
@@ -59,7 +61,7 @@ async function drawLineChart() {
   const lineGenerator = d3
     .line()
     .x((d) => xScale(xAccessor(d)))
-    .y((d) => yScale(yAccessor(d)));
+    .y((d) => yScale(yAccessor(d)))
   const line = bounds
     .append("path")
     .attr("d", lineGenerator(dataset))
